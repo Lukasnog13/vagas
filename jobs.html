@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vagas CM - Portal de Empregos</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <div class="navbar-logo">
+        <a href="index.html">
+          <span class="logo-text">Vagas<span class="logo-highlight">CM</span></span>
+        </a>
+      </div>
+      
+      <nav class="navbar-menu" id="navbar-menu">
+        <ul class="menu-list">
+          <li><a href="jobs.html" class="menu-item active">Vagas</a></li>
+          <li><a href="companies.html" class="menu-item">Empresas</a></li>
+          <li><a href="about.html" class="menu-item">Sobre</a></li>
+          <li><a href="support.html" class="menu-item">Suporte</a></li>
+        </ul>
+      </nav>
+      
+      <div class="navbar-actions">
+        <button class="btn btn-login" id="loginBtn">Entrar</button>
+        <button class="btn btn-primary">Cadastrar</button>
+        <button class="menu-toggle" id="menuToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="jobs-section">
+      <div class="container">
+        <div class="page-header">
+          <h1>Vagas CM</h1>
+          <p>Encontre as melhores oportunidades no mercado</p>
+        </div>
+
+        <div class="filters">
+          <div class="search-field">
+            <i class="fas fa-search"></i>
+            <input type="text" id="jobSearch" placeholder="Pesquisar vagas...">
+          </div>
+          
+          <div class="filter-group">
+            <select id="filterLocation">
+              <option value="">Localização</option>
+              <option value="São Paulo">São Paulo</option>
+              <option value="Rio de Janeiro">Rio de Janeiro</option>
+              <option value="Belo Horizonte">Belo Horizonte</option>
+              <option value="Remote">Remoto</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <select id="filterType">
+              <option value="">Tipo de Contrato</option>
+              <option value="full-time">Tempo Integral</option>
+              <option value="part-time">Meio Período</option>
+              <option value="contract">Contrato</option>
+              <option value="internship">Estágio</option>
+              <option value="remote">Remoto</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <select id="filterCategory">
+              <option value="">Categoria</option>
+              <option value="Tecnologia">Tecnologia</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Engenharia">Engenharia</option>
+              <option value="Vendas">Vendas</option>
+              <option value="Administração">Administração</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="jobs-grid" id="jobsList">
+          <!-- Job cards will be inserted here by JavaScript -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo">
+            <span class="logo-text">Vagas<span class="logo-highlight">CM</span></span>
+          </div>
+          <p>Conectando os melhores talentos às melhores oportunidades no mercado de trabalho brasileiro.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Links Rápidos</h4>
+          <ul>
+            <li><a href="jobs.html">Buscar Vagas</a></li>
+            <li><a href="companies.html">Empresas</a></li>
+            <li><a href="about.html">Sobre Nós</a></li>
+            <li><a href="support.html">Suporte</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Para Empresas</h4>
+          <ul>
+            <li><a href="#">Publicar Vaga</a></li>
+            <li><a href="#">Planos e Preços</a></li>
+            <li><a href="#">Recursos para Recrutadores</a></li>
+            <li><a href="#">Guia de Contratação</a></li>
+            <li><a href="#">Termos para Empresas</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <ul class="contact-info">
+            <li><i class="fas fa-map-marker-alt"></i> Av. Paulista, SN, São Paulo, SP</li>
+            <li><i class="fas fa-phone"></i> +55 11 9999-9999</li>
+            <li><i class="fas fa-envelope"></i> contato@vagascm.com.br</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> VagasCM. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Login Modal -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Entrar na sua conta</h3>
+        <button class="close-modal" id="closeLoginModal"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Senha</label>
+            <input type="password" id="password" required>
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" id="rememberMe">
+            <label for="rememberMe">Lembrar-me</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+        </form>
+        <div class="modal-footer">
+          <p>Ainda não tem uma conta? <a href="#">Cadastre-se</a></p>
+          <p><a href="#">Esqueceu a senha?</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carregue os dados primeiro, depois os scripts utilitários e finalmente os scripts específicos -->
+  <script src="data.js"></script>
+  <script src="scripts.js"></script>
+  <script src="jobs.js"></script>
+</body>
+</html>

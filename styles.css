@@ -1,0 +1,887 @@
+/* Base Styles and Variables */
+:root {
+    --primary: #9b87f5;
+    --primary-dark: #7E69AB;
+    --secondary: #0EA5E9;
+    --accent: #1EAEDB;
+    --black: #333333;
+    --dark-gray: #555555;
+    --gray: #8E9196;
+    --light-gray: #F1F0FB;
+    --white: #ffffff;
+    --border-color: #e5e7eb;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--black);
+    line-height: 1.5;
+    background-color: #f9fafb;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    margin-bottom: 1rem;
+  }
+  
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+  }
+  
+  .btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--primary-dark);
+  }
+  
+  .btn-secondary {
+    background-color: var(--secondary);
+    color: var(--white);
+  }
+  
+  .btn-login {
+    background-color: transparent;
+    color: var(--dark-gray);
+  }
+  
+  .btn-login:hover {
+    color: var(--primary);
+  }
+  
+  .btn-light {
+    background-color: var(--white);
+    color: var(--black);
+  }
+  
+  .btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--white);
+    color: var(--white);
+  }
+  
+  .btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .btn-block {
+    display: block;
+    width: 100%;
+  }
+  
+  /* Header and Navigation */
+  .navbar {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1rem 0;
+  }
+  
+  .navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .navbar-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .logo-text {
+    color: var(--black);
+  }
+  
+  .logo-highlight {
+    color: var(--primary);
+  }
+  
+  .navbar-menu {
+    display: flex;
+  }
+  
+  .menu-list {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .menu-item {
+    color: var(--dark-gray);
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+  }
+  
+  .menu-item:hover, .menu-item.active {
+    color: var(--primary);
+  }
+  
+  .menu-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary);
+  }
+  
+  .navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    color: var(--dark-gray);
+    cursor: pointer;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background-color: var(--light-gray);
+    padding: 4rem 0;
+    text-align: center;
+  }
+  
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--black);
+  }
+  
+  .hero p {
+    font-size: 1.25rem;
+    color: var(--dark-gray);
+    margin-bottom: 2rem;
+  }
+  
+  .search-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+  }
+  
+  .search-field {
+    flex: 1;
+    min-width: 200px;
+    position: relative;
+  }
+  
+  .search-field i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray);
+  }
+  
+  .search-field input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 0.875rem;
+  }
+  
+  .search-btn {
+    padding: 0.75rem 1.5rem;
+  }
+  
+  .search-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    color: var(--gray);
+  }
+  
+  .tag {
+    color: var(--primary);
+    font-size: 0.875rem;
+  }
+  
+  .tag:hover {
+    text-decoration: underline;
+  }
+  
+  /* Section Styles */
+  section {
+    padding: 4rem 0;
+  }
+  
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .view-all {
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 0.875rem;
+  }
+  
+  .view-all:hover {
+    text-decoration: underline;
+  }
+  
+  /* Jobs Grid */
+  .jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .job-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+  }
+  
+  .job-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+  
+  .job-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .company-logo {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-right: 1rem;
+  }
+  
+  .company-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .company-info h3 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .company-location {
+    font-size: 0.75rem;
+    color: var(--gray);
+  }
+  
+  .job-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    transition: var(--transition);
+  }
+  
+  .job-card:hover .job-title {
+    color: var(--primary);
+  }
+  
+  .job-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    border-radius: var(--border-radius);
+    background-color: var(--light-gray);
+  }
+  
+  .badge-primary {
+    background-color: var(--primary);
+    color: var(--white);
+  }
+  
+  .badge-secondary {
+    background-color: var(--secondary);
+    color: var(--white);
+  }
+  
+  .badge-outline {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+  }
+  
+  .job-description {
+    font-size: 0.875rem;
+    color: var(--dark-gray);
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2; /* Propriedade padrão sem o prefixo */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  
+  .job-details {
+    margin-bottom: 1rem;
+  }
+  
+  .job-location, .job-salary {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .job-location i, .job-salary i {
+    margin-right: 0.5rem;
+    color: var(--gray);
+  }
+  
+  .job-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border-color);
+  }
+  
+  .job-date {
+    font-size: 0.75rem;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+  }
+  
+  .job-date i {
+    margin-right: 0.25rem;
+  }
+  
+  /* Companies Slider */
+  .companies-slider {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .company-item {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    transition: var(--transition);
+    text-align: center;
+    padding-bottom: 1rem;
+    box-shadow: var(--shadow);
+  }
+  
+  .company-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .company-item .company-logo {
+    width: 100%;
+    height: 100px;
+    margin-right: 0;
+    border-radius: 0;
+    margin-bottom: 1rem;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .company-item .company-logo img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+  }
+  
+  .company-item .company-info {
+    padding: 0 1rem;
+  }
+  
+  .company-item .company-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: var(--black);
+  }
+  
+  .company-item .company-info p {
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-bottom: 0.5rem;
+  }
+  
+  .company-item .company-location {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.75rem;
+    color: var(--gray);
+  }
+  
+  .company-item .company-location i {
+    margin-right: 0.25rem;
+  }
+  
+  /* Call To Action */
+  .cta {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 4rem 0;
+  }
+  
+  .cta-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .cta-text {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .cta h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cta p {
+    color: var(--light-gray);
+    margin-bottom: 2rem;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .cta-card {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 350px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    backdrop-filter: blur(8px);
+  }
+  
+  .cta-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .cta-features {
+    margin: 1.5rem 0;
+  }
+  
+  .cta-features li {
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .cta-features i {
+    color: var(--secondary);
+    margin-right: 0.5rem;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: var(--light-gray);
+    padding: 4rem 0 2rem;
+    margin-top: auto;
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .footer-logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-col p {
+    color: var(--gray);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--white);
+    color: var(--gray);
+    transition: var(--transition);
+  }
+  
+  .social-links a:hover {
+    background-color: var(--primary);
+    color: var(--white);
+  }
+  
+  .footer-col h4 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-col ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-col ul li a {
+    color: var(--gray);
+    font-size: 0.875rem;
+    transition: var(--transition);
+  }
+  
+  .footer-col ul li a:hover {
+    color: var(--primary);
+  }
+  
+  .contact-info li {
+    display: flex;
+    align-items: center;
+    color: var(--gray);
+    font-size: 0.875rem;
+  }
+  
+  .contact-info i {
+    margin-right: 0.5rem;
+    color: var(--primary);
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--gray);
+    font-size: 0.875rem;
+  }
+  
+  /* Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal.show {
+    display: flex;
+  }
+  
+  .modal-content {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    width: 100%;
+    max-width: 400px;
+    box-shadow: var(--shadow-md);
+    animation: modalOpen 0.3s;
+  }
+  
+  @keyframes modalOpen {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .modal-header {
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .close-modal {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: var(--gray);
+  }
+  
+  .modal-body {
+    padding: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 0.875rem;
+  }
+  
+  .form-check {
+    display: flex;
+    align-items: center;
+  }
+  
+  .form-check input {
+    width: auto;
+    margin-right: 0.5rem;
+  }
+  
+  .form-check label {
+    margin-bottom: 0;
+  }
+  
+  .modal-footer {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.875rem;
+  }
+  
+  .modal-footer a {
+    color: var(--primary);
+  }
+  
+  .modal-footer a:hover {
+    text-decoration: underline;
+  }
+  
+  .modal-footer p {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Page Header */
+  .page-header {
+    margin-bottom: 2rem;
+  }
+  
+  /* Jobs Filter */
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .filter-group {
+    flex: 1;
+    min-width: 150px;
+  }
+  
+  .filter-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+    font-size: 0.875rem;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .navbar-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      max-width: 300px;
+      height: 100vh;
+      background-color: var(--white);
+      padding: 2rem;
+      transition: var(--transition);
+      z-index: 200;
+      flex-direction: column;
+    }
+    
+    .navbar-menu.show {
+      right: 0;
+    }
+    
+    .menu-list {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .menu-toggle {
+      display: block;
+    }
+    
+    .search-form {
+      flex-direction: column;
+    }
+    
+    .search-field {
+      width: 100%;
+    }
+    
+    .search-btn {
+      width: 100%;
+    }
+    
+    .cta-content {
+      flex-direction: column;
+    }
+    
+    .cta-card {
+      width: 100%;
+    }
+    
+    .job-footer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    
+    .companies-slider {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+    
+    .hero p {
+      font-size: 1rem;
+    }
+    
+    .section-header {
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+    }
+    
+    .navbar-actions .btn:not(.menu-toggle) {
+      display: none;
+    }
+    
+    .companies-slider {
+      grid-template-columns: 1fr;
+    }
+  }

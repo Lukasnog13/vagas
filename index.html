@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vagas CM - Portal de Empregos</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <div class="navbar-logo">
+        <a href="index.html">
+          <span class="logo-text">Vagas<span class="logo-highlight">CM</span></span>
+        </a>
+      </div>
+      
+      <nav class="navbar-menu" id="navbar-menu">
+        <ul class="menu-list">
+          <li><a href="jobs.html" class="menu-item">Vagas</a></li>
+          <li><a href="companies.html" class="menu-item">Empresas</a></li>
+          <li><a href="about.html" class="menu-item">Sobre</a></li>
+          <li><a href="support.html" class="menu-item">Suporte</a></li>
+        </ul>
+      </nav>
+      
+      <div class="navbar-actions">
+        <button class="btn btn-login" id="loginBtn">Entrar</button>
+        <button class="btn btn-primary">Cadastrar</button>
+        <button class="menu-toggle" id="menuToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Encontre o emprego dos seus sonhos</h1>
+          <p>Conectamos você às melhores oportunidades do mercado</p>
+          
+          <div class="search-form">
+            <div class="search-field">
+              <i class="fas fa-search"></i>
+              <input type="text" placeholder="Cargo, habilidade ou empresa">
+            </div>
+            
+            <div class="search-field">
+              <i class="fas fa-map-marker-alt"></i>
+              <input type="text" placeholder="Cidade ou estado">
+            </div>
+            
+            <button class="btn btn-primary search-btn">Buscar Vagas</button>
+          </div>
+          
+          <div class="search-tags">
+            <span>Populares:</span>
+            <a href="#" class="tag">Desenvolvedor</a>
+            <a href="#" class="tag">Marketing</a>
+            <a href="#" class="tag">Remoto</a>
+            <a href="#" class="tag">Tempo Integral</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Jobs Section -->
+    <section class="featured-jobs">
+      <div class="container">
+        <div class="section-header">
+          <h2>Vagas em Destaque</h2>
+          <a href="jobs.html" class="view-all">Ver todas</a>
+        </div>
+        
+        <div class="jobs-grid" id="featuredJobs">
+          <!-- Job cards will be inserted here by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Companies Section -->
+    <section class="companies">
+      <div class="container">
+        <div class="section-header">
+          <h2>Empresas em Destaque</h2>
+          <a href="companies.html" class="view-all">Ver todas</a>
+        </div>
+        
+        <div class="companies-slider" id="companiesSlider">
+          <!-- Company logos will be inserted here by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Call To Action Section -->
+    <section class="cta">
+      <div class="container">
+        <div class="cta-content">
+          <div class="cta-text">
+            <h2>Pronto para dar o próximo passo na sua carreira?</h2>
+            <p>Crie seu perfil gratuitamente, faça o upload do seu currículo e comece a se candidatar para as melhores vagas do mercado hoje mesmo.</p>
+            
+            <div class="cta-buttons">
+              <a href="jobs.html" class="btn btn-light">Explorar Vagas</a>
+              <a href="profile.html" class="btn btn-outline">Criar Perfil</a>
+            </div>
+          </div>
+          
+          <div class="cta-card">
+            <h3>Para Empresas</h3>
+            <p>Encontre os melhores talentos para sua equipe e impulsione seu negócio.</p>
+            
+            <ul class="cta-features">
+              <li><i class="fas fa-check-circle"></i> Publique vagas ilimitadas</li>
+              <li><i class="fas fa-check-circle"></i> Acesse um banco de talentos qualificados</li>
+              <li><i class="fas fa-check-circle"></i> Gerencie todas as candidaturas em um só lugar</li>
+            </ul>
+            
+            <a href="company-panel.html" class="btn btn-primary btn-block">Criar Conta Empresarial</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo">
+            <span class="logo-text">Vagas<span class="logo-highlight">CM</span></span>
+          </div>
+          <p>Conectando os melhores talentos às melhores oportunidades no mercado de trabalho brasileiro.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Links Rápidos</h4>
+          <ul>
+            <li><a href="jobs.html">Buscar Vagas</a></li>
+            <li><a href="companies.html">Empresas</a></li>
+            <li><a href="about.html">Sobre Nós</a></li>
+            <li><a href="support.html">Suporte</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Para Empresas</h4>
+          <ul>
+            <li><a href="#">Publicar Vaga</a></li>
+            <li><a href="#">Planos e Preços</a></li>
+            <li><a href="#">Recursos para Recrutadores</a></li>
+            <li><a href="#">Guia de Contratação</a></li>
+            <li><a href="#">Termos para Empresas</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <ul class="contact-info">
+            <li><i class="fas fa-map-marker-alt"></i> Av. Paulista, SN, São Paulo, SP</li>
+            <li><i class="fas fa-phone"></i> +55 11 9999-9999</li>
+            <li><i class="fas fa-envelope"></i> contato@vagascm.com.br</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> VagasCM. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Login Modal -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Entrar na sua conta</h3>
+        <button class="close-modal" id="closeLoginModal"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Senha</label>
+            <input type="password" id="password" required>
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" id="rememberMe">
+            <label for="rememberMe">Lembrar-me</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+        </form>
+        <div class="modal-footer">
+          <p>Ainda não tem uma conta? <a href="#">Cadastre-se</a></p>
+          <p><a href="#">Esqueceu a senha?</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carregue os dados primeiro, depois os scripts utilitários e finalmente os scripts específicos -->
+  <script src="data.js"></script>
+  <script src="scripts.js"></script>
+  <script src="home.js"></script>
+</body>
+</html>
